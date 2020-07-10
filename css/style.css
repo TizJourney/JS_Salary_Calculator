@@ -4,6 +4,8 @@
     padding   : 0;
 }
 
+/* CONTAINER STYLING */
+
 body {
     font-family        : 'Montserrat', sans-serif;
     background-image   : url('https://images.unsplash.com/photo-1594065296416-aed7ae708d58');
@@ -23,78 +25,96 @@ body {
 
 
 .calculator {
-    position     : absolute;
-    left         : 50%;
-    top          : 50%;
-    transform    : translate(-50%, -50%);
-    width        : 500px;
-    background   : #fff;
-    border-radius: 10px;
-    overflow     : hidden;
-    box-shadow   : 0px 0px 6px 2px rgba(0, 0, 0, .4);
+    position      : absolute;
+    left          : 50%;
+    top           : 50%;
+    transform     : translate(-50%, -50%);
+    width         : 600px;
+    display       : flex;
+    flex-wrap     : wrap;
+    flex-direction: row;
+    background    : #fff;
+    border-radius : 10px;
+    overflow      : hidden;
+    box-shadow    : 0px 0px 6px 2px rgba(0, 0, 0, .4);
 }
+
+
+/* SEGMENTS STYLING */
+
+.segment {
+
+    padding      : 0 15px;
+    display      : flex;
+    flex-wrap    : wrap;
+    position     : relative;
+    border-bottom: 1px solid #adb7c4;
+    align-content: flex-start;
+}
+
+.segment:last-child {
+    border-bottom: none;
+
+}
+
+.segment>* {
+    margin: 5px 5px 8px 5px;
+}
+
+.calculator__text {
+    flex-basis: 100%;
+
+}
+
+.calculator__rank {
+    flex-basis        : 50%;
+    /* justify-content: space-evenly; */
+    /* flex-direction : column; */
+
+}
+
+.calculator__grade {
+    flex-basis : 50%;
+    border-left: 1px solid #adb7c4;
+}
+
+.calculator__results {
+    background: #fff4c4;
+    flex-basis: 100%;
+
+}
+
+/* ELEMENTS STYLING */
 
 .calculator__header {
     background: #758fc7;
     padding   : 10px;
     text-align: center;
     color     : #fff;
+    flex-basis: 100%;
 }
+
 
 .calculator__subheadder {
-    color        : #758fc7;
-    margin-bottom: 1rem;
-    width        : 100%;
+    color           : #758fc7;
+    /* margin-bottom: 1rem; */
+    /* width        : 100%; */
+    flex-basis      : 100%;
 }
 
-.segment {
-    padding      : 20px;
-    display      : flex;
-    flex-wrap    : row wrap;
-    position     : relative;
-    border-bottom: 1px solid #adb7c4;
-
-}
-
-.calculator__results {
-    padding   : 20px;
-    background: #fff4c4;
-}
-
-.calculator__text {
-    flex-wrap: wrap !important;
-}
-
-.calculator__rank,
-.calculator__grade {
-
-    display       : flex;
-    flex-wrap     : wrap;
-    flex-direction: row;
-}
-
-.calculator__rank {
-    width: 60%;
-}
-
-.calculator__grade {
-    width: 40%;
-}
-
-.radio-item {
-    margin-right    : 10px;
-    /* margin-bottom: 10px; */
-    position        : relative;
-}
 
 
 .calculator__results>.calculator__subheadder {
     color: #3b3416;
+    /* margin-bottom: 10px; */
 }
 
 .calculator__results>p {
-    font-size  : 1.2rem;
-    line-height: 1.7rem;
+    text-align: right;
+    font-size  : 1.1rem;
+    /* line-height: 1.7rem; */
+    flex-basis      : 100%;
+    margin: -5px 5px 10px 5px;
 }
 
 .calculator__number {
@@ -108,26 +128,51 @@ body {
 }
 
 .text-item {
-    width  : 100%;
-    display: flex;
+    display    : flex;
+    flex-basis : 100%;
+    align-items: center;
+    height: 2.5rem;
 }
 
 .text-item__input {
-    border       : 0;
+    border       : none;
     border-bottom: 3px solid #ccd5e0;
     padding      : 5px;
     background   : #ebeff5;
-    margin-right : 10px;
-    width        : 100%;
+    width     : 70%;
     font-size    : 1.5rem;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     outline      : none;
     transition   : all 0.3s ease;
+
 }
+
+.text-item__label {
+    position: relative;
+    left: -1px;
+    text-align: center;
+    display      : block;
+    width     : calc(30% + 1px);
+    padding      : 5px;
+    font-size    : 0.8rem;
+
+    background   : #ccd5e0;
+    /* border-bottom: 3px solid #ccd5e0; */
+    transition   : all 0.3s ease;
+    border-radius: 0 10px 10px 0;
+}
+
+
 
 .text-item__input:focus {
     background   : #dde2eb;
     border-bottom: 3px solid #758fc7;
+}
+
+
+.text-item__input:focus + .text-item__label{
+    background   : #758fc7;
+    color: #fff;
 }
 
 .radio-item__input {
@@ -135,14 +180,23 @@ body {
 
 }
 
+.radio-item {
+    position: relative;
+    margin-top: -5px;
+    /* width   : 100%; */
+
+}
+
 .radio-item__label {
+    display      : inline-block;
     cursor       : pointer;
     background   : #ebeff5;
-    padding      : 5px;
+    padding      : 5px 7px;
     border-radius: 10px;
     border-bottom: 3px solid #ccd5e0;
     transition   : all 0.3s ease;
     color        : #99abd1;
+    width        : 100%;
 }
 
 .radio-item__input:checked+.radio-item__label {
