@@ -9,72 +9,72 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="page">
 
     <div class='back'></div>
 
     <form class='calculator'>
         <h1 class='calculator__header'>Твой доход: ДГИ edition</h1>
 
-        <div class='calculator__text segment'>
-            <h2 class='calculator__subheadder'>Что там по зарплатке?</h2>
-            <div class='text-item'>
+        <div class='calculator__texts'>
+            <h2 class='calculator__subheader'>Что там по зарплатке?</h2>
+            <div class='calculator__text-item text-item'>
                 <input class='text-item__input' type="text" id='monthly-income' name='monthly-income'
                     placeholder='39561.5 + 33800'>
                 <label class='text-item__label' for="monthly-income"> Упало за месяц <br> (можно частями)</label>
             </div>
         </div>
 
-        <div class='calculator__rank segment'>
-            <h2 class='calculator__subheadder'>Должность?</h2>
+        <div class='calculator__rank'>
+            <h2 class='calculator__subheader'>Должность?</h2>
 
-            <div class='radio-item'>
-                <input class='radio-item__input' type="radio" name='rank' id='specialist' value='specialist' checked>
-                <label class='radio-item__label' for="specialist">Специалист</label>
-            </div>
-
-            <div class='radio-item'>
-                <input class='radio-item__input' type="radio" name='rank' id='manager' value='manager'>
-                <label class='radio-item__label' for="manager">Руководитель</label>
-            </div>
+            <ul class="calculator__rank-list">
+              <li class='radio-item'>
+                  <input class='radio-item__input' type="radio" name='rank' id='specialist' value='specialist' checked>
+                  <label class='radio-item__label' for="specialist">Специалист</label>
+              </li>
+              <li class='radio-item'>
+                  <input class='radio-item__input' type="radio" name='rank' id='manager' value='manager'>
+                  <label class='radio-item__label' for="manager">Руководитель</label>
+              </li>
+            </ul>
 
         </div>
 
-        <div class='calculator__grade segment'>
-            <h2 class='calculator__subheadder'>А как оценили?</h2>
+        <div class='calculator__grade'>
+            <h2 class='calculator__subheader'>А как оценили?</h2>
 
-            <div class='radio-item'>
+            <ul class="calculator__grade-list">
+              <li class='radio-item'>
                 <input class='radio-item__input' type="radio" name='grade' id='grade-e' value='grade-e'>
                 <label class='radio-item__label red' for="grade-e">E</label>
-            </div>
-
-            <div class='radio-item'>
+              </li>
+              <li class='radio-item'>
                 <input class='radio-item__input' type="radio" name='grade' id='grade-d' value='grade-d'>
                 <label class='radio-item__label yellow' for="grade-d">D</label>
-            </div>
-
-            <div class='radio-item'>
+              </li>
+              <li class='radio-item'>
                 <input class='radio-item__input' type="radio" name='grade' id='grade-c' value='grade-c' checked>
                 <label class='radio-item__label' for="grade-c">C</label>
-            </div>
-
-            <div class='radio-item'>
+              </li>
+              <li class='radio-item'>
                 <input class='radio-item__input' type="radio" name='grade' id='grade-b' value='grade-b'>
                 <label class='radio-item__label' for="grade-b">B</label>
-            </div>
-
-            <div class='radio-item'>
+              </li>
+              <li class='radio-item'>
                 <input class='radio-item__input' type="radio" name='grade' id='grade-a' value='grade-a'>
                 <label class='radio-item__label green' for="grade-a">A</label>
-            </div>
-
+              </li>
+            </ul>
         </div>
 
-        <div class='calculator__results segment'>
-            <h2 class='calculator__subheadder'>Чтож, наградой тебе будет:</h2>
-            <p>Квартальная премия: <span class='calculator__number'> 00 ₽</span></p>
-            <p>Годовая премия: <span class='calculator__number'> 00 ₽</span></p>
-            <p>Ежемесячный доход: <span class='calculator__number'> 00 ₽</span></p>
+        <div class='calculator__results'>
+            <h2 class='calculator__subheader calculator__subheader_color_dark'>
+              Чтож, наградой тебе будет:
+            </h2>
+            <p class="calculator__result-item">Квартальная премия: <span class='calculator__number'> 00 ₽</span></p>
+            <p class="calculator__result-item">Годовая премия: <span class='calculator__number'> 00 ₽</span></p>
+            <p class="calculator__result-item">Ежемесячный доход: <span class='calculator__number'> 00 ₽</span></p>
         </div>
 
     </form>

@@ -1,12 +1,6 @@
-* {
-    box-sizing: border-box;
-    margin    : 0;
-    padding   : 0;
-}
-
 /* CONTAINER STYLING */
 
-body {
+.page {
     font-family        : 'Montserrat', sans-serif;
     background-image   : url('https://images.unsplash.com/photo-1594065296416-aed7ae708d58');
     background-size    : cover;
@@ -30,91 +24,111 @@ body {
     top           : 50%;
     transform     : translate(-50%, -50%);
     width         : 600px;
-    display       : flex;
-    flex-wrap     : wrap;
-    flex-direction: row;
+    display       : grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header header"
+      "income income"
+      "rank grade"
+      "results results";
     background    : #fff;
     border-radius : 10px;
     overflow      : hidden;
     box-shadow    : 0px 0px 6px 2px rgba(0, 0, 0, .4);
 }
 
-
 /* SEGMENTS STYLING */
-
-.segment {
-
-    padding      : 0 15px;
-    display      : flex;
-    flex-wrap    : wrap;
-    position     : relative;
-    border-bottom: 1px solid #adb7c4;
-    align-content: flex-start;
-}
 
 .segment:last-child {
     border-bottom: none;
 
 }
 
-.segment>* {
-    margin: 5px 5px 8px 5px;
+.calculator__texts {
+    grid-area: income;
+    padding: 10px 10px;
 }
 
-.calculator__text {
-    flex-basis: 100%;
-
-}
-
-.calculator__rank {
-    flex-basis        : 50%;
-    /* justify-content: space-evenly; */
-    /* flex-direction : column; */
-
-}
-
-.calculator__grade {
-    flex-basis : 50%;
-    border-left: 1px solid #adb7c4;
+.calculator__text-item {
+  margin-top: 10px;
 }
 
 .calculator__results {
-    background: #fff4c4;
-    flex-basis: 100%;
-
+  grid-area: results;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: #fff4c4;
 }
 
 /* ELEMENTS STYLING */
 
 .calculator__header {
+    padding: 20px 0;
+    grid-area: header;
     background: #758fc7;
     padding   : 10px;
     text-align: center;
     color     : #fff;
     flex-basis: 100%;
+    margin: 0;
 }
 
+.calculator__subheader {
+  color           : #758fc7;
+  align-self: flex-start;
+  margin: 0;
+ }
 
-.calculator__subheadder {
-    color           : #758fc7;
-    /* margin-bottom: 1rem; */
-    /* width        : 100%; */
-    flex-basis      : 100%;
+.calculator__subheader_color_dark {
+  color: #3b3416;
 }
 
-
-
-.calculator__results>.calculator__subheadder {
-    color: #3b3416;
-    /* margin-bottom: 10px; */
+.calculator__rank {
+  grid-area: rank;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.calculator__results>p {
+.calculator__rank-list {
+  list-style: none;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px 0;
+  padding: 0;
+}
+
+.calculator__grade {
+  grid-area: grade;
+  padding: 10px 10px;
+  border-left: 1px solid #adb7c4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator__grade-list {
+  list-style: none;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+
+}
+
+.calculator__results {
+  padding: 10px 10px;
+}
+
+.calculator__result-item {
     text-align: right;
     font-size  : 1.1rem;
-    /* line-height: 1.7rem; */
-    flex-basis      : 100%;
-    margin: -5px 5px 10px 5px;
+    margin: 10px 0 0 0;
 }
 
 .calculator__number {
@@ -128,10 +142,8 @@ body {
 }
 
 .text-item {
-    display    : flex;
-    flex-basis : 100%;
-    align-items: center;
-    height: 2.5rem;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
 }
 
 .text-item__input {
@@ -139,7 +151,6 @@ body {
     border-bottom: 3px solid #ccd5e0;
     padding      : 5px;
     background   : #ebeff5;
-    width     : 70%;
     font-size    : 1.5rem;
     border-radius: 10px 0 0 10px;
     outline      : none;
@@ -148,21 +159,15 @@ body {
 }
 
 .text-item__label {
-    position: relative;
-    left: -1px;
     text-align: center;
     display      : block;
-    width     : calc(30% + 1px);
     padding      : 5px;
     font-size    : 0.8rem;
 
     background   : #ccd5e0;
-    /* border-bottom: 3px solid #ccd5e0; */
     transition   : all 0.3s ease;
     border-radius: 0 10px 10px 0;
 }
-
-
 
 .text-item__input:focus {
     background   : #dde2eb;
@@ -182,13 +187,9 @@ body {
 
 .radio-item {
     position: relative;
-    margin-top: -5px;
-    /* width   : 100%; */
-
 }
 
 .radio-item__label {
-    display      : inline-block;
     cursor       : pointer;
     background   : #ebeff5;
     padding      : 5px 7px;
